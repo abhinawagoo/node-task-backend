@@ -5,14 +5,21 @@ import {
   getCounterData,
   getAllTask,
 } from "../controllers/taskController.js";
+
 const router = express.Router();
 
-// import Data from "../config/models/Data";
+// Define API endpoints and their corresponding controller functions
 
-// API endpoints
+// Endpoint to add a new task
 router.post("/add", addTask);
+
+// Endpoint to update an existing task by ID
 router.put("/update/:id", updateTask);
+
+// Endpoint to get counter data (update and add counts)
 router.get("/count", getCounterData);
+
+// Endpoint to get all tasks
 router.get("/get-all-tasks", getAllTask);
 
 export default router;

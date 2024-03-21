@@ -1,15 +1,16 @@
 import { Counter, Data } from "../config/models/taskModel.js";
 
+// Get all tasks from the database
 export const getAllTask = async (req, res) => {
   try {
     const tasks = await Data.find({});
-
     res.status(200).json(tasks);
   } catch (error) {
     res.status(500).send("Error fetching tasks");
   }
 };
 
+// Add a new task to the database
 export const addTask = async (req, res) => {
   try {
     // Increment add count
@@ -30,6 +31,7 @@ export const addTask = async (req, res) => {
   }
 };
 
+// Update an existing task in the database
 export const updateTask = async (req, res) => {
   try {
     // Increment update count
@@ -51,9 +53,9 @@ export const updateTask = async (req, res) => {
   }
 };
 
+// Get counter data (update and add counts) from the database
 export const getCounterData = async (req, res) => {
   try {
-    // Fetch counts from database
     const counters = await Counter.findOne({});
     res.status(200).json(counters);
   } catch (error) {
