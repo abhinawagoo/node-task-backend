@@ -24,7 +24,7 @@ export const addTask = async (req, res) => {
     const data = new Data({ data: newData });
     await data.save();
 
-    res.status(200).send("Data added successfully");
+    res.status(200).json({ _id: data._id, data: data.data });
   } catch (error) {
     res.status(500).send("Error adding data");
   }
