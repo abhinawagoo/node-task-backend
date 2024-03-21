@@ -10,7 +10,7 @@ import connectToDatabase from "./config/dbConfig.js";
 //express app
 const app = express();
 const corsOptions = {
-  origin: ["http://localhost:3000", "https://node-task-backend-rho.vercel.app"],
+  origin: ["http://localhost:3000", "https://react-task-flax.vercel.app"],
   credentials: true,
 };
 //middleware
